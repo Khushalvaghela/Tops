@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 idffrent date </title>
+    <style>
+
+    </style>
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js">
+    </script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js">
+    </script>
+    <script>
+        $(function () {
+            $("#date1").datepicker();
+            var date1 = $("#date1")
+        });
+        $(function () {
+            $("#date2").datepicker();
+            var date2 = $("#date2")
+        });
+
+        function func() {
+            date1 = new Date(date1.value);
+            date2 = new Date(date2.value);
+            var milli_secs = date1.getTime() - date2.getTime();
+
+            // Convert the milli seconds to Days
+            var days = milli_secs / (1000 * 3600 * 24);
+            var year = days / (365);
+            var week = days / (7);
+            var month = days / (12)
+            document.getElementById("ans").innerHTML =
+                Math.round(Math.abs(days));
+            document.getElementById("ans1").innerHTML =
+                Math.round(Math.abs(year));
+            document.getElementById("ans2").innerHTML =
+                Math.round(Math.abs(week));
+            document.getElementById("ans3").innerHTML =
+                Math.round(Math.abs( h));
+        } 
+    </script>
+</head>
+
+<body>
+    <h3>Calculating the difference between the 2 dates</h3>
+
+    <p>Enter Date 1 :
+        <input type="text" id="date1">
+    </p>
+
+
+
+    <p>Enter Date 2 :
+        <input type="text" id="date2">
+    </p>
+
+
+    <button id="sub" onclick="func()" type="button"> Submit
+    </button>
+    <h3 id="ans" class="Cal">days</h3>
+    <h3 id="ans1" class="Cal">year</h3>
+    <h3 id="ans2" class="Cal">week</h3>
+    <h3 id="ans3" class="Cal">month</h3>
+</body>
+
+</html>
