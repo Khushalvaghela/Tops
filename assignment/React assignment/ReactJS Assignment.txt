@@ -1,0 +1,34 @@
+					  -----------------ReactJS Introduction Assignment------------------
+
+ 1. What is React Js?
+ Ans: React is a free and open-source front-end JavaScript library for building user interfaces based on components. It is maintained by Meta and a community of individual developers and companies. React can be used to develop single-page, mobile, or server-rendered applications with frameworks like Next.js.
+ 
+ 2. What is NPM in React Js?
+ Ans: NPM is short for node package manager, an online directory that contains the various already registered open-source packages. NPM modules consume the various functions as a third-party package when installed into an app using the NPM command npm install .
+
+ 3. What is Role of Node Js in react Js?
+ Ans: Node. js enables the creation of scalable and quick back-end RESTful APIs. On the other hand, React is a front-end library that creates interactive user interfaces. With both tools, you can fast build complex and scalable web apps.
+
+ 4. What is CLI command In React Js?
+ Ans: React has its own command-line interface (CLI) commands. However, these CLI commands are currently only used to create a passable version of a react application using the command line.
+
+ 5. What is Components in React Js?
+ Ans: Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML. Components come in two types, Class components and Function components, in this tutorial we will concentrate on Function components.
+
+ 6. What is Header and Content Components in React Js?
+ Ans: Headers are compositions that extend standard navbar functionalities. They contain additional components like a jumbotron, sub-navbar, or image covers which serve as a containers for extra navigation elements - usually links, forms, or call-to-action buttons.
+
+ 7. How to install React Js on Windows, Linux Operating System? How to Install NPM and How to check version of NPM?
+ Ans:- => Step 1: Install Node.js installer for windows.
+       => Step 2: Open command prompt  to check whether it is completely installed or not type the command –> node -v.
+       => Step 3: Now in the terminal run the below command:- npm install -g create-react-app.
+       => Step 4: Now Create a new folder where you want to make your react app using the below command:- mkdir newfolder.
+       => Step 5: Now inside this folder run the command:- create-react-app reactfirst YOUR_APP_NAME.
+       => Step 6: Open Project Folder.
+       => Step 7: To start your app run the below command :- npm start.
+
+ 8. How to check version of React Js?
+ Ans: To check which React version is your project using you need to open the package. json. Take a look under the dependencies section. It should list all of the dependencies of your project and one of those should be React.
+
+ 9. How to change in components of React Js?
+ Ans: setState() setState() enqueues changes to the component state and tells React that this component and its children need to be re-rendered with the updated state. This is the primary method you use to update the user interface in response to event handlers and server responses.
