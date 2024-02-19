@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form{
+            padding: 5px;
+        }
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <div class="form">
+            <label for="">enter your name</label>
+            <input type="text" name="" id="username" onblur="return checkName()" onkeyup="return checkvalidname()">
+            <span id="msg"></span>
+        </div>
+        <div class="form">
+            <button type="submit" onclick="checkname()">click hear</button>
+        </div>
+    </form>
+    <script>
+       function checkName() {
+            let uname = document.getElementById("username").value;
+            if (uname == "" || uname == null) {
+                document.getElementById("msg").innerHTML = "Enter Your name"
+                return false;
+            } else {
+                document.getElementById("msg").innerHTML = ""
+                return false;
+            }
+        }
+
+       // keyboard event
+
+       function checkvalidname(){
+        let uname = document.getElementById("username").value;
+        let regex = /^[a-zA-Z]*$/
+        if(!(isNaN(uname)) || uname.lenth < 2){
+            document.getElementById("msg").innerHTML = "invalid name"
+            return false;
+        }else {
+            document.getElementById("msg").innerHTML = ""
+            return false;
+        }
+       }
+    </script>
+</body>
+</html>

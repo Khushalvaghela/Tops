@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+ul{
+list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.conteiner{
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.conteiner .live-p{
+    padding: 30px;
+}
+.conteiner .nav-box{
+    display: flex;
+    /*text-align: center;*/
+}
+.conteiner .nav-box .navtital{
+    flex: 1;
+}
+.conteiner .nav-box .navbar{
+    flex: 2;
+}
+.conteiner .nav-box .navbar a{
+    margin: 10px;
+    color: white;
+}
+.conteiner .nav-box .logo{
+    font-size: 28px;
+color: aliceblue;
+
+    flex: 0.1;
+}
+.conteiner .nav-box .logo{
+    margin: 10px;
+}
+.conteiner .nav-box .navtital  h1{
+    color: aliceblue;
+}
+.conteiner .nav-box .navtital   span{
+    color:orangered;
+}
+.conteiner .nav-box .navtital{
+    font-size: 20px;
+}
+.conteiner .nav-box .navbar ul{
+    display: flex;
+    padding: 10px;
+    gap: 30px;
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+}
+.conteiner .nav-box .navbar ul .theme{
+   background-color:rgba(128, 128, 128, 0.746);
+   width: 30px;
+   padding-top: 2px;
+   text-align: center;
+   height: 30px;
+   border-radius: 50%;
+}
+.conteiner .nav-box .navbar ul li a{
+    transition: 0.5s ease-in-out all;
+}
+.conteiner .nav-box .navbar ul li a:hover{
+
+color: orangered;
+}
+.conteiner .nav-box .navbar ul .theme:hover{
+    background-color:orangered;
+}
+/*=====================home page=====================-*/
+.king{
+    background-image: url(unnamed.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 650px;
+}
+.homepage{
+    padding: 150px 0px;
+}
+.homepage .flexbox h1{
+      font-size: 40px;
+      color: white;
+      padding: 10px ;
+}
+.homepage .flexbox p{
+    border-left: 6px solid white;
+    color: white;
+    width: 40%;
+    margin-bottom: 30px;
+}
+.homepage .flexbox button{
+    height: 40px;
+    width: 130px;
+    border-radius: 10px;
+    background-color: transparent;
+    color:white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+    transition: .2s all linear;
+    border: 2px solid white;
+    font-size: 20px;
+    text-transform: capitalize;
+  
+}
+.homepage .flexbox button:hover{
+    background-color:orangered;
+    color: aliceblue;
+}

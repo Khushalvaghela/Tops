@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Maths Table</title>
+    <style>
+        .main{
+            border: 1px solid black;
+            width: 310px;
+            height: 530px;
+            margin: auto;
+            padding: 9px;
+        }
+        .div_1{
+            height: auto;
+            width: 200px;
+            padding: 10px;
+            margin: 30px 0px 0px 0px;
+            border: 2px solid black;
+            text-align: center;
+        }
+        button{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form action="">
+            <label for="">Enter any number :</label>
+            <input type="text" id="user_inp">
+            <button onclick="return displ_table_fn()">Display</button>
+        </form>
+        <div class="div_1"></div>
+    </div>
+
+    <script>
+        function displ_table_fn(){
+            var table = document.getElementById("user_inp").value;
+            var div = document.querySelector(".div_1");
+            if(table == "" || table == null){
+                alert("Enter Value")
+            }else{
+                var res = "";
+                for(let i = 1; i <= 10; i++){
+                    res = res + "<p>" + table + "*" + i + "=" + (table*i) + "</p>"
+                }
+                div.innerHTML = res;
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
