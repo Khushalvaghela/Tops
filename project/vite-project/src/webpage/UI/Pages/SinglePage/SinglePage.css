@@ -1,0 +1,42 @@
+.item {
+  margin-left: 9px;
+}
+
+.owl-carousel {
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.item img {
+  width: auto;
+}
+
+.owl-nav button.owl-prev {
+  position: absolute;
+  top: 130px;
+  left: -30px;
+  /* background-color: rgb(75, 72, 72) !important; */
+  height: 35px;
+  width: 35px;
+  color: black !important;
+  border-radius: 20% !important;
+  border: 1px solid black !important;
+  transition: 1s all ease-in-out !important;
+}
+
+.owl-nav button.owl-next {
+  position: absolute;
+  top: 130px;
+  right: -30px;
+  background-color: transparent !important;
+  height: 35px;
+  width: 35px;
+  border-radius: 20% !important;
+  border: 1px solid black !important;
+  transition: 1s all ease-in-out !important;
+}
+
+.mood{
+  margin-left: 70px;
+  margin-right: 70px;
+}
