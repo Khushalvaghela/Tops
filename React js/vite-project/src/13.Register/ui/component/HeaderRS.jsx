@@ -29,7 +29,7 @@ function HeaderRS(args) {
       <RegisterModal modal={registerModal} toggle={registerToggle} />
       <LoginModel modal={loginModel} toggle={loginToggle} />
       <Navbar style={{ width: "100vw" }} {...args}>
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand href="/">ToDo </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav

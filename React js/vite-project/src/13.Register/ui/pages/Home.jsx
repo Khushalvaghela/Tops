@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button, Input, Label } from "reactstrap";
-import img1 from "../pages/reactimage.png"
+import img1 from "../pages/imge.png"
 
 export default function Home() {
   const navigate = useNavigate();
@@ -18,14 +18,18 @@ export default function Home() {
   };
   return (
     <div className="d-flex flex-column ">
-      <h1>Home</h1>
-      <img src={img1} style={{height:"500px"}}alt="" />
+      {/* <h1>Home</h1> */}
+      <div>
+      <img src={img1} style={{height:"700px", width:"1600px"}}alt="" />
+
+      </div>
       {check.map((e, i) => {
         return <h1 key={i}>{e}</h1>;
       })}
      
-     
+     <div>
       <Button onClick={() => navigate(-1)}>Go Back</Button>
+      </div>
     </div>
   );
 }

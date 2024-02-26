@@ -53,6 +53,8 @@ import AppRedux from "./17.redux/AppRedux";
 import FilterApp from "./18.filterRegisterData/FilterApp.jsx";
 import PrRedux from "./19.prectice/PrRedux.jsx";
 import ProRedux from "./20.reduxpr/ProRedux.jsx";
+import ProtectedRouter from "./11.protectedRouter/router/ProtectedRouter.jsx";
+import AppPro from "./11.protectedRouter/AppPro.jsx";
 
 function app() {
   return (
@@ -105,10 +107,12 @@ function app() {
         {/* <MainHomePage /> */}
         {/* -----------------------------------------------Router----------------------------------------------- */}
         {/* <Router /> */}
-        <RegisterApp />
+        {/* <RegisterApp /> */}
+        {/* <AppPro/> */}
+        {/* <ProtectedRouter/> */}
 
         {/* --------------------------------------ToDoList------------------------------------------------ */}
-        {/* <ToDoList/> */}
+        {/* <ToDoList/>  */}
         {/* --------------------------------------------presiontetion---------------------------------------- */}
         {/* <CreReaDel/> */}
         {/* <Todo/> */}
@@ -116,6 +120,8 @@ function app() {
         {/* <ProductPage/> */}
         {/* <SimpleApi/> */}
         {/* <Product/> */}
+        {/* <ProtectedRouter/>  */}
+        
         {/* ----------------------------------------redux------------------------------------------- */}
         {/* <AppRedux/> */}
         {/* <PrRedux/> */}
