@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Prodect() {
+export default function Witchlist() {
   return (
     <div>
-      About
+    jfeb
     </div>
   )
 }

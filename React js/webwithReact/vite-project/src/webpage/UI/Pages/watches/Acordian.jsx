@@ -5,6 +5,7 @@ import {
   AccordionHeader,
   AccordionItem,
 } from "reactstrap";
+import "./Acordian.css"
 
 function Example(props) {
   const [open, setOpen] = useState("1");
@@ -17,7 +18,7 @@ function Example(props) {
   };
 
   return (
-    <div>
+    <div className="contener" >
       <Accordion open={open} toggle={toggle}>
         <AccordionItem>
           <AccordionHeader targetId="1">
@@ -88,10 +89,10 @@ function Example(props) {
           </AccordionBody>
         </AccordionItem>
         <AccordionItem>
-          <AccordionHeader targetId="2">
+          <AccordionHeader targetId="4">
             <b>Strap Color</b>
           </AccordionHeader>
-          <AccordionBody accordionId="2">
+          <AccordionBody accordionId="4">
             <ul>
               <li>
                 <input type="checkbox" />
@@ -121,10 +122,10 @@ function Example(props) {
           </AccordionBody>
         </AccordionItem>
         <AccordionItem>
-          <AccordionHeader targetId="2">
+          <AccordionHeader targetId="5">
             <b>Discounts</b>
           </AccordionHeader>
-          <AccordionBody accordionId="2">
+          <AccordionBody accordionId="5">
             <ul>
               <li>
                 <input type="checkbox" />
@@ -154,10 +155,10 @@ function Example(props) {
           </AccordionBody>
         </AccordionItem>
         <AccordionItem>
-          <AccordionHeader targetId="2">
+          <AccordionHeader targetId="6">
             <b>Function</b>
           </AccordionHeader>
-          <AccordionBody accordionId="2">
+          <AccordionBody accordionId="6">
             <ul>
               <li>
                 <input type="checkbox" />

@@ -5,6 +5,13 @@ import Header from "../UI/Components/Header/Header";
 import Footer from "../UI/Components/Footer/Footer";
 import About from "../UI/Pages/about/About";
 import Watches from "../UI/Pages/watches/Watches";
+import Admin from "../UI/Pages/admin/Admin";
+import Witchlist from "../UI/Pages/bag/WitchList";
+import Bag from "../UI/Pages/bag/Bag";
+import { Provider } from "react-redux";
+import DashBoard from "../UI/Pages/dashboard/DashBoard";
+import Profile from "../UI/Pages/profilesection/Profile";
+import Product from "../UI/Pages/product/Product";
 
 export default function Router() {
   return (
@@ -12,9 +19,15 @@ export default function Router() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About/>}/>
-        <Route path="/watches" element={<Watches/>}/>
+        <Route path="/about" element={<About />} />
+        <Route path="/watches" element={<Watches />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/witchlist" element={<Witchlist />} />
+        <Route path="/bag" element={<Bag />} />
+        <Route path="/profile" element={<Profile/>} />
+        <Route path="/product" element={<Product/>} />
 
+        <Route path="/dashBoard" element={<DashBoard />} />
       </Routes>
       <Footer />
     </BrowserRouter>
