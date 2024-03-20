@@ -55,6 +55,7 @@ import PrRedux from "./19.prectice/PrRedux.jsx";
 import ProRedux from "./20.reduxpr/ProRedux.jsx";
 import ProtectedRouter from "./11.protectedRouter/router/ProtectedRouter.jsx";
 import AppPro from "./11.protectedRouter/AppPro.jsx";
+import TaskInter from "./21.interviwtask/TaskInter.jsx";
 
 function app() {
   return (
@@ -127,6 +128,7 @@ function app() {
         {/* <PrRedux/> */}
         {/* <ProRedux/> */}
         {/* <FilterApp/> */}
+        <TaskInter/>
       </div>
       <ToastContainer />
     </>
