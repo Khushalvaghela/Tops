@@ -9,63 +9,64 @@ import img4 from "./../../../images/cardbtom.jpg";
 export default function Cart() {
   return (
     <>
-      <div className="d-flex justify-content-end w-auto mt-5 m-5">
-        <div className="conteiner">
-          <div>
-            <Card inverse>
-              <CardImg
-                className="d-flex g-5 m-6"
-                src={img1}
-                style={{
-                  height: 380,
-                  width: "250px",
-                }}
-                // width="80%"
-              />
-              <CardImgOverlay>
-                <CardTitle className="card_text" tag="h5">
-                  ANALOG WATCHES{" "}
-                </CardTitle>
-              </CardImgOverlay>
-            </Card>
+      <div className="mt-5">
+        <div className="conteiner-cart ms-5 me-5">
+          <div className="imagecard d-flex ">
+            <div className="m-5">
+              <Card inverse>
+                <CardImg
+                  className="d-flex g-5 m-6"
+                  src={img1}
+                  style={{
+                    height: 380,
+                    width: "250px",
+                  }}
+                />
+                <CardImgOverlay>
+                  <CardTitle className="card_text" tag="h5">
+                    ANALOG WATCHES{" "}
+                  </CardTitle>
+                </CardImgOverlay>
+              </Card>
+            </div>
+            <div className="m-5">
+              <Card inverse>
+                <CardImg
+                  src={img2}
+                  style={{
+                    height: 380,
+                    width: "250px",
+                  }}
+                  width="40%"
+                />
+                <CardImgOverlay>
+                  <CardTitle className="card_text" tag="h5">
+                    SMART WATCHES
+                  </CardTitle>
+                </CardImgOverlay>
+              </Card>
+            </div>
+            <div className="m-5">
+              <Card inverse>
+                <CardImg
+                  src={img3}
+                  style={{
+                    height: 380,
+                    width: "250px",
+                  }}
+                  width="40%"
+                />
+                <CardImgOverlay>
+                  <CardTitle className="card_text" tag="h5">
+                    HEARABLES
+                  </CardTitle>
+                </CardImgOverlay>
+              </Card>
+            </div>
           </div>
-          <div>
-            <Card inverse>
-              <CardImg
-                src={img2}
-                style={{
-                  height: 380,
-                  width: "250px",
-                }}
-                // width="40%"
-              />
-              <CardImgOverlay>
-                <CardTitle className="card_text" tag="h5">
-                  SMART WATCHES
-                </CardTitle>
-              </CardImgOverlay>
-            </Card>
-          </div>
-          <div>
-            <Card inverse>
-              <CardImg
-                src={img3}
-                style={{
-                  height: 380,
-                  width: "250px",
-                }}
-                // width="40%"
-              />
-              <CardImgOverlay>
-                <CardTitle className="card_text" tag="h5">
-                  HEARABLES
-                </CardTitle>
-              </CardImgOverlay>
-            </Card>
-          </div>
-          <div className="fast_text">
+          {/* <div className="fast_text">
             <h1>FASTRACK CATEGORIES</h1>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="axius">

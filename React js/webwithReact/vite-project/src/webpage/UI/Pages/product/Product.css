@@ -89,3 +89,7 @@
   background-color: #007bff;
   color: #fff;
 }
+
+input:focus-visible{
+   border: none !important;
+ }

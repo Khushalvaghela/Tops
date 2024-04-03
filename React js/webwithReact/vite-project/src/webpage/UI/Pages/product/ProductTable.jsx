@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 import { FormGroup, Input, Label, Table } from "reactstrap";
-import { EyeIcon, PenBox, Trash } from "lucide-react";
+import { EyeIcon, PenBox, Search, Trash } from "lucide-react";
 import { toast } from "react-toastify";
 
 let sizeOptions = ["41", "42", "43", "44", "45"];
@@ -21,6 +21,7 @@ export default function ProductTable({
     page: 1,
     totalProduct: 0,
   });
+  let [search, setSearch] = useState("");
 
   useEffect(() => {
     axios({
@@ -29,6 +30,7 @@ export default function ProductTable({
       params: {
         limit: paginate.limit,
         page: paginate.page,
+        search,
       },
     }).then((res) => {
       setData(res.data.data);
@@ -73,10 +75,39 @@ export default function ProductTable({
     setData(newData);
     setPaginate({ ...paginate, limit, page: 1 });
   };
-  
+const searchhandler =(e)=>{
+  setSearch(e?.target?.value)
+  refresHandler()
+}
+
+useEffect(() => {
+  const delaySearch = setTimeout(() => {
+    refetchData();
+  }, 1000); 
+  return () => clearTimeout(delaySearch);
+}, [search]);
 
   return (
     <div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          border: "2px solid black",
+          width: "320px",
+          borderRadius: "10px 10px",
+          backgroundColor:"transparent"
+        }}
+      >
+      <Input
+  placeholder="search your data"
+  style={{ width: "300px", border: "none",  }}
+  onChange={(e)=>searchhandler(e)}
+/>
+
+
+        <Search role="button" />
+      </div>
       <FormGroup style={{ display: "flex", justifyContent: "end" }}>
         <Label for="exampleSelect">Select</Label>
         <Input
@@ -84,9 +115,7 @@ export default function ProductTable({
           name="userType"
           type="select"
           style={{ width: "40px" }}
-          onChange={(e)=>handleSelectChange(e.target.value)    
-
-          }
+          onChange={(e) => handleSelectChange(e.target.value)}
         >
           <option>10</option>
           <option>15</option>
@@ -144,8 +173,16 @@ export default function ProductTable({
                         key={i}
                         style={
                           product.size.includes(size)
-                            ? { backgroundColor: "green", color: "white",borderRadius:"50% " }
-                            : { backgroundColor: "gray", color: "white",borderRadius:"50% " }
+                            ? {
+                                backgroundColor: "green",
+                                color: "white",
+                                borderRadius: "50% ",
+                              }
+                            : {
+                                backgroundColor: "gray",
+                                color: "white",
+                                borderRadius: "50% ",
+                              }
                         }
                       >
                         {size}

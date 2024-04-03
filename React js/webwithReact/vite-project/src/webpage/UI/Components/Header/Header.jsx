@@ -91,7 +91,6 @@ export default function Header() {
                   ) : (
                     <div>
                       <User2 onClick={loginToggle} />
-                      <LogIn onClick={() => logoutHandler()}/>
 
                       {/* <p>log in</p> */}
                     </div>

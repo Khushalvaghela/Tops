@@ -14,7 +14,7 @@ export default function SecondCard() {
   return (
     <>
       <div className="card_two mt-5 m-3">
-        <div className="conteiner ">
+        <div className="main-conteiner">
           <div>
             <Card inverse>
               <CardImg
@@ -71,7 +71,7 @@ export default function SecondCard() {
       <div className="symbol mt-5">
         <div className="d-flex">
           <img src={img4} alt="" />
-          <h5>SAFE AND SECURE CHECKOUT</h5  >
+          <h5>SAFE AND SECURE CHECKOUT</h5>
         </div>
         <div className="d-flex">
           <img src={img5} alt="" />
@@ -81,12 +81,11 @@ export default function SecondCard() {
           <img src={img6} alt="" />
           <h5>7 DAY RETURN</h5>
         </div>
-        <div className="d-flex"> 
+        <div className="d-flex">
           <img src={img7} alt="" />
           <h5>FREE SHIPPING NATIONWIDE</h5>
         </div>
       </div>
-      
     </>
   );
 }
