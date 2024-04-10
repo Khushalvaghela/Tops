@@ -39,29 +39,25 @@ export default function Acordion({ setFilter, filter }) {
     }
   };
 
-  // const gendercheckhandler = (item) => {
-  //   let match = filter?.gender?.includes(item);
-  //   if (match) {
-  //     let fillterdata = filter?.gender?.filter((e) => e !== item);
-  //     setFilter({ ...filter, gender: fillterdata });
-  //   } else {
-  //     setFilter({ ...filter, gender: [...filter?.gender, item] });
-  //   }
-  // };
-  // const gendercheckhandler = (item) => {
-  //   let match = filter?.gender?.includes(item);
-  //   if (match) {
-  //     let filteredData = filter?.gender?.filter((e) => e !== item);
-  //     setFilter({ ...filter, gender: filteredData });
-  //   } else {
-  //     setFilter({ ...filter, gender: [...filter?.gender, item] });
-  //   }
-  // };
+  const categoryHandler = (category, e) => {
+    if (e.target.checked) {
+      setFilter((prevFilter) => ({
+        ...prevFilter,
+        category: [...(prevFilter.category || []), category],
+      }));
+    } else {
+      const newArr = filter?.category?.filter((item) => item !== category);
+      setFilter((prevFilter) => ({
+        ...prevFilter,
+        category: newArr,
+      }));
+    }
+  };
 
   return (
     <div
       className="contener"
-      style={{ position: "sticky", top: "80px", height: "500px", zIndex: "10" }}
+      style={{ position: "sticky", top: "20px", height: "500px", zIndex: "10" }}
     >
       <Accordion open={open} toggle={toggle}>
         <AccordionItem>
@@ -122,8 +118,8 @@ export default function Acordion({ setFilter, filter }) {
                   id="exampleprice"
                   name="brand"
                   type="range"
-                  min="500" // Set the minimum value to 500
-                  max="100000" // Set the maximum value to 100,000
+                  min="2000"
+                  max="10000"
                   value={filter?.price?.gt || ""}
                   onChange={(e) =>
                     setFilter({
@@ -138,8 +134,8 @@ export default function Acordion({ setFilter, filter }) {
                   id="exampleprice"
                   name="brand"
                   type="range"
-                  min="500" // Set the minimum value to 500
-                  max="100000" // Set the maximum value to 100,000
+                  min="2000"
+                  max="10000"
                   value={filter?.price?.lt || ""}
                   onChange={(e) =>
                     setFilter({
@@ -155,7 +151,7 @@ export default function Acordion({ setFilter, filter }) {
         </AccordionItem>
         <AccordionItem>
           <AccordionHeader targetId="3">
-            <b>Strap Material</b>
+            <b>Category</b>
           </AccordionHeader>
           <AccordionBody accordionId="3">
             <ul>
@@ -236,43 +232,23 @@ export default function Acordion({ setFilter, filter }) {
                 />
                 <label>Brown </label>
               </li>
-              
+              <li>
+                <Input
+                  type="checkbox"
+                  onChange={(e) => checkBoxHandler("Red", e)}
+                />
+                <label>Red </label>
+              </li>
+              <li>
+                <Input
+                  type="checkbox"
+                  onChange={(e) => checkBoxHandler("Silver", e)}
+                />
+                <label>Silver </label>
+              </li>
             </ul>
           </AccordionBody>
         </AccordionItem>
-        {/* <AccordionItem>
-          <AccordionHeader targetId="5">
-            <b>Discounts</b>
-          </AccordionHeader>
-          <AccordionBody accordionId="5">
-            <ul>
-              <li>
-                <Input type="checkbox" />
-                <label>Upto 10% Off </label>
-              </li>
-              <li>
-                <Input type="checkbox" />
-                <label>10% - 20% Off </label>
-              </li>
-              <li>
-                <Input type="checkbox" />
-                <label>20% - 30% Off </label>
-              </li>
-              <li>
-                <Input type="checkbox" />
-                <label>30% - 40% Off </label>
-              </li>
-              <li>
-                <Input type="checkbox" />
-                <label>40% - 50% Off </label>
-              </li>
-              <li>
-                <Input type="checkbox" />
-                <label>50% - 60% Off</label>
-              </li>
-            </ul>
-          </AccordionBody>
-        </AccordionItem> */}
         <AccordionItem>
           <AccordionHeader targetId="5">
             <b>Discounts</b>
@@ -327,33 +303,73 @@ export default function Acordion({ setFilter, filter }) {
 
         <AccordionItem>
           <AccordionHeader targetId="6">
-            <b>Function</b>
+            <b>Category</b>
           </AccordionHeader>
           <AccordionBody accordionId="6">
             <ul>
               <li>
-                <Input type="checkbox" />
-                <label>Analog </label>
+                <Input
+                  type="checkbox"
+                  onChange={(e) => categoryHandler("Formal", e)}
+                  checked={filter?.category?.includes("Formal")}
+                />
+                <label>Formal </label>
               </li>
               <li>
-                <Input type="checkbox" />
-                <label>Analog Digital</label>
+                <Input
+                  type="checkbox"
+                  onChange={(e) => categoryHandler("Chronograph", e)}
+                  checked={filter?.category?.includes("Chronograph")}
+                />
+                <label>Chronograph</label>
               </li>
               <li>
-                <Input type="checkbox" />
-                <label>Analog Moonphase </label>
+                <Input
+                  type="checkbox"
+                  onChange={(e) => categoryHandler("Digital", e)}
+                  checked={filter?.category?.includes("Digital")}
+                />
+                <label>Digital </label>
               </li>
               <li>
-                <Input type="checkbox" />
-                <label>30% - 40% Off </label>
+                <Input
+                  type="checkbox"
+                  onChange={(e) => categoryHandler("Sport", e)}
+                  checked={filter?.category?.includes("Sport")}
+                />
+                <label>Sport</label>
               </li>
               <li>
-                <Input type="checkbox" />
-                <label>40% - 50% Off </label>
+                <Input
+                  type="checkbox"
+                  onChange={(e) => categoryHandler("Leather", e)}
+                  checked={filter?.category?.includes("Leather")}
+                />
+                <label>Leather</label>
               </li>
               <li>
-                <Input type="checkbox" />
-                <label>50% - 60% Off </label>
+                <Input
+                  type="checkbox"
+                  onChange={(e) => categoryHandler("Vintage", e)}
+                  checked={filter?.category?.includes("Vintage")}
+                />
+                <label>Vintage </label>
+              </li>
+              <li>
+                <Input
+                  type="checkbox"
+                  onChange={(e) => categoryHandler("Stainless Steel", e)}
+                  checked={filter?.category?.includes("Stainless Steel")}
+                />
+                <label>Stainless Steel </label>
+              </li>
+              <li>
+                <Input
+                  type="checkbox"
+                  onChange={(e) => categoryHandler("Silicone", e)}
+                  checked={filter?.category?.includes("Silicone")}
+                />
+                <label>Silicone </label>
               </li>
             </ul>
           </AccordionBody>

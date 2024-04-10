@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Carousel,
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
   CarouselCaption,
-} from 'reactstrap';
+} from "reactstrap";
 
-
-import img1 from "./../../../images/slider2-1.jpg";
-import img2 from "./../../../images/slider2-2.jpg";
-import img3 from "./../../../images/slider2-3.jpg";
-import img4 from "./../../../images/slider2-4.jpg";
+import img1 from "../../../assets/images/sli 1.jpg"
+import img2 from "../../../assets/images/sli 2.jpg"
+import img3 from "../../../assets/images/sli 3.jpg"
+import img4 from "../../../assets/images/sli 4.jpg"
+import img5 from "../../../assets/images/sli 5.jpg"
+import img6 from "../../../assets/images/sli 6.jpg"
+import img7 from "../../../assets/images/sli 7.jpg"
 
 const items = [
   {
@@ -25,6 +27,15 @@ const items = [
   },
   {
     src: img4,
+  },
+  {
+    src: img5,
+  },
+  {
+    src: img6,
+  },
+  {
+    src: img7,
   },
 ];
 
@@ -56,7 +67,7 @@ function Example(args) {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText}  className=' mt-4'style={{marginLeft:"65px", width:"1390px", height:"500px"}}/>
+        <img src={item.src} alt={item.altText} className="w-100 mt-4"/>
         <CarouselCaption
           captionText={item.caption}
           captionHeader={item.caption}

@@ -1,14 +1,15 @@
 import React from "react";
 import { Card, CardImg, CardImgOverlay, CardText, CardTitle } from "reactstrap";
 import "./SecondCard.css";
-import img1 from "./../../../images/card1.jpg";
-import img2 from "./../../../images/card2.jpg";
-import img3 from "./../../../images/card3.jpg";
-import img4 from "./../../../images/symbol1.png";
-import img5 from "./../../../images/symbol2.png";
-import img6 from "./../../../images/symbol3.png";
-import img7 from "./../../../images/symbol4.png";
-import video from "./../../../images/Fastrack.mp4";
+
+import img1 from "../../../assets/images/card1.jpg";
+import img2 from "../../../assets/images/card2.jpg";
+import img3 from "../../../assets/images/card3.jpg";
+import img4 from "../../../assets/images/symbol1.png";
+import img5 from "../../../assets/images/symbol2.png";
+import img6 from "../../../assets/images/symbol3.png";
+import img7 from "../../../assets/images/symbol4.png";
+import video from "../../../assets/images/Fastrack.mp4";
 
 export default function SecondCard() {
   return (

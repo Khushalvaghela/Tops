@@ -1,5 +1,5 @@
 import React from "react";
-import reactimg1 from "../../../images/img1.jpg";
+import reactimg1 from "../../../assets/images/img1.jpg";
 import Carousel from "./Carousel";
 import CarouselTwo from "./CarouselTow";
 import Cart from "../Cart/Cart";

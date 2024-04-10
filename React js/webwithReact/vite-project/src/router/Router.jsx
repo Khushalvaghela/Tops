@@ -12,11 +12,13 @@ import { Provider } from "react-redux";
 import DashBoard from "../UI/Pages/dashboard/DashBoard";
 import Profile from "../UI/Pages/profilesection/Profile";
 import Product from "../UI/Pages/product/Product";
+import Contact from "../UI/Pages/contact/Contact";
+import UserData from "../UI/Pages/user/UserData";
 
 export default function Router() {
   return (
     <BrowserRouter>
-      <Header />
+      <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -25,7 +27,10 @@ export default function Router() {
         <Route path="/witchlist" element={<Witchlist />} />
         <Route path="/bag" element={<Bag />} />
         <Route path="/profile" element={<Profile/>} />
-        <Route path="/product" element={<Product/>} />
+        <Route path="/product" element={<Product/>} /> 
+        <Route path="/contact" element={<Contact/>} /> 
+        <Route path="/userData" element={<UserData/>} /> 
+
 
         <Route path="/dashBoard" element={<DashBoard />} />
       </Routes>

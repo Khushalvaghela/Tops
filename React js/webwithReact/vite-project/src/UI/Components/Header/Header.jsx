@@ -78,19 +78,20 @@ export default function Header() {
                     <NavLink to={"/product"}>Product</NavLink>
                     <NavLink to={"/profile"}>profile</NavLink>
                     <NavLink to={"/dashboard"}>dashboard</NavLink>
+                    <NavLink to={"/userData"}>userData</NavLink>
                   </>
                 )}
 
                 <div>
                   {Object.keys(loginData).length > 0 ? (
                     <div>
-                      <User2 onClick={logoutHandler} />
+                      <LogIn onClick={logoutHandler} />
 
                       {/* <p>log out</p> */}
                     </div>
                   ) : (
                     <div>
-                      <User2 onClick={loginToggle} />
+                      <LogIn onClick={loginToggle} />
 
                       {/* <p>log in</p> */}
                     </div>

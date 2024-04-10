@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import img1 from "./../../../images/bag.svg";
+import img1 from "../../../assets/images/bag.svg";
 import { useNavigate } from "react-router-dom";
 import { Button } from "reactstrap";
 

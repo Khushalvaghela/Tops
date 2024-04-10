@@ -1,5 +1,5 @@
 import React from "react";
-import dashboard from "../../../images/preview.jpg";
+import dashboard from "../../../assets/images/preview.jpg";
 
 export default function DashBoard() {
   return (

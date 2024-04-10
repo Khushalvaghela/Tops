@@ -74,17 +74,10 @@ export default function AllWatch() {
 
   return (
     <>
-      <div
-        style={{
-          backgroundColor: "#ebd0ce",
-          position: "sticky",
-          top: "0",
-          zIndex: "1",
-          padding: "10px 0px",
-        }}
-      >
-        <h1>All product</h1>
+      <div className="text-center border-top border-bottom py-3 m-3">
+        <h3>1,271 items found for "Watches"</h3>
       </div>
+
       <div className="d-flex ">
         <div
           style={{
@@ -95,7 +88,7 @@ export default function AllWatch() {
           <Acordion setFilter={setFilter} filter={filter} />
         </div>
 
-        <div className="d-flex flex-wrap  justify-content-around mt-5">
+        <div className="d-flex flex-wrap  justify-content-around mt-3">
           {data.map((e) => {
             return <WatchData product={e} key={e._id} />;
           })}

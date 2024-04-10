@@ -1,10 +1,12 @@
 import React from "react";
 import "./Card.css";
 import { Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
-import img1 from "./../../../images/cardimg1.jpg";
-import img2 from "./../../../images/cardimg2.jpg";
-import img3 from "./../../../images/cardimg3.jpg";
-import img4 from "./../../../images/cardbtom.jpg";
+
+
+import img1 from "../../../assets/images/cardimg1.jpg";
+import img2 from "../../../assets/images/cardimg2.jpg";
+import img3 from "../../../assets/images/cardimg3.jpg";
+import img4 from "../../../assets/images/cardbtom.jpg";
 
 export default function Cart() {
   return (
