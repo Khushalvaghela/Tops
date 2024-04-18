@@ -1,22 +1,26 @@
 import { Button, NavItem } from "reactstrap";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./header.css";
 import reactimg1 from "./img1.png";
 import LoginModal from "../modal/LoginModal";
 import RegisterModal from "../modal/RegisterModal";
-import { HeartIcon, LogIn, User, User2 } from "lucide-react";
+import { HeartIcon, LogIn, Store, User, User2 } from "lucide-react";
 import { Bag } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../../redux/fetures/auth/authSlice";
-
+import cart, { fetchCart } from "../../../redux/fetures/product/cart";
 
 export default function Header() {
   const [loginModal, setLoginModal] = useState(false);
   const [registerModal, setRegisterModal] = useState(false);
   const loginData = JSON.parse(localStorage.getItem("loginUser")) || [];
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+
+const {cart,refresh} = useSelector(
+  (Store)=>Store.cartSlice
+)
 
   // const logoutHandler = () => {
   //   localStorage.setItem("loginUser", JSON.stringify([]));
@@ -30,9 +34,13 @@ export default function Header() {
   // };
   const logoutHandler = () => {
     dispatch(logOut());
-    navigate("/");}
+    navigate("/");
+  };
+
+  useEffect(() => {
+    dispatch(fetchCart());
+  }, [refresh]);
   const data = useSelector((state) => state.authSlice);
- 
 
   const loginToggle = () => setLoginModal(!loginModal);
   const registerToggle = () => setRegisterModal(!registerModal);
@@ -65,12 +73,12 @@ export default function Header() {
           <nav>
             <div>
               <NavItem className="d-flex gap-3">
+                <NavLink to={"/watches"}>Watches</NavLink>
                 {data.user?.userType !== "admin" ? (
                   <>
                     <NavLink to={"/"}>Home</NavLink>
                     <NavLink to={"/about"}>About</NavLink>
                     <NavLink to={"/contact"}>Contact</NavLink>
-                    <NavLink to={"/watches"}>Watches</NavLink>
                   </>
                 ) : (
                   <>
@@ -95,14 +103,14 @@ export default function Header() {
 
                       {/* <p>log in</p> */}
                     </div>
-                    
                   )}
                 </div>
                 <NavLink to={"/witchlist"}>
                   <HeartIcon />
                 </NavLink>
-                <NavLink to={"/Bag"}>
+                <NavLink to="/Bag" className="cart-link">
                   <Bag size={20} />
+                  <span className="cart-count">{cart.length}</span>
                 </NavLink>
               </NavItem>
             </div>

@@ -111,15 +111,15 @@ export default function Acordion({ setFilter, filter }) {
             <b>Price</b>
           </AccordionHeader>
           <AccordionBody accordionId="2">
-            <form>
+            {/* <form>
               <div>
-                <label htmlFor="">min Price</label>
+                <label htmlFor="">2500-3000</label>
                 <Input
                   id="exampleprice"
                   name="brand"
-                  type="range"
-                  min="2000"
-                  max="10000"
+                  type="checkbox"
+                  min="2500"
+                  max="3000"
                   value={filter?.price?.gt || ""}
                   onChange={(e) =>
                     setFilter({
@@ -129,13 +129,13 @@ export default function Acordion({ setFilter, filter }) {
                   }
                 />
                 {filter.price?.gt} <br />
-                <label htmlFor="">Max Price</label>
+                <label htmlFor="">3100-3500</label>
                 <Input
                   id="exampleprice"
                   name="brand"
-                  type="range"
-                  min="2000"
-                  max="10000"
+                  type="checkbox"
+                  min="3100"
+                  max="3500"
                   value={filter?.price?.lt || ""}
                   onChange={(e) =>
                     setFilter({
@@ -144,9 +144,133 @@ export default function Acordion({ setFilter, filter }) {
                     })
                   }
                 />
-                {filter.price?.lt} {/* Display the current value of price.lt */}
+                {filter.price?.lt} 
               </div>
-            </form>
+            </form> */}
+             <form>
+      <div>
+        <FormGroup check>
+          <Label check>
+            <Input
+              type="checkbox"
+              checked={filter.price.gt === "2500"}
+              onChange={(e) =>
+                setFilter({
+                  ...filter,
+                  price: { ...filter.price, gt: e.target.checked ? "2500" : null },
+                })
+              }
+            />
+            2500 and above
+          </Label>
+        </FormGroup>
+        <FormGroup check>
+          <Label check>
+            <Input
+              type="checkbox"
+              checked={filter.price.gt === "2500" && filter.price.lt === "3000"}
+              onChange={(e) =>
+                setFilter({
+                  ...filter,
+                  price: {
+                    gt: e.target.checked ? "2500" : null,
+                    lt: e.target.checked ? "3000" : null,
+                  },
+                })
+              }
+            />
+            2500 - 3000
+          </Label>
+        </FormGroup>
+        <FormGroup check>
+          <Label check>
+            <Input
+              type="checkbox"
+              checked={filter.price.gt === "3100" && filter.price.lt === "3500"}
+              onChange={(e) =>
+                setFilter({
+                  ...filter,
+                  price: {
+                    gt: e.target.checked ? "3100" : null,
+                    lt: e.target.checked ? "3500" : null,
+                  },
+                })
+              }
+            />
+            3100 - 3500
+          </Label>
+        </FormGroup>
+        <FormGroup check>
+          <Label check>
+            <Input
+              type="checkbox"
+              checked={filter.price.gt === "3600" && filter.price.lt === "4000"}
+              onChange={(e) =>
+                setFilter({
+                  ...filter,
+                  price: {
+                    gt: e.target.checked ? "3600" : null,
+                    lt: e.target.checked ? "4000" : null,
+                  },
+                })
+              }
+            />
+            3600 - 4000
+          </Label>
+        </FormGroup>
+        <FormGroup check>
+          <Label check>
+            <Input
+              type="checkbox"
+              checked={filter.price.gt === "4100" && filter.price.lt === "4500"}
+              onChange={(e) =>
+                setFilter({
+                  ...filter,
+                  price: {
+                    gt: e.target.checked ? "4100" : null,
+                    lt: e.target.checked ? "4500" : null,
+                  },
+                })
+              }
+            />
+            4100 - 4500
+          </Label>
+        </FormGroup>
+        <FormGroup check>
+          <Label check>
+            <Input
+              type="checkbox"
+              checked={filter.price.gt === "4600" && filter.price.lt === "5000"}
+              onChange={(e) =>
+                setFilter({
+                  ...filter,
+                  price: {
+                    gt: e.target.checked ? "4600" : null,
+                    lt: e.target.checked ? "5000" : null,
+                  },
+                })
+              }
+            />
+            4600 - 5300
+          </Label>
+        </FormGroup>
+        <FormGroup check>
+          <Label check>
+            <Input
+              type="checkbox"
+              checked={filter.price.lt === "5300"}
+              onChange={(e) =>
+                setFilter({
+                  ...filter,
+                  price: { ...filter.price, lt: e.target.checked ? "5300" : null },
+                })
+              }
+            />
+            Below 5300
+          </Label>
+        </FormGroup>
+      </div>
+    </form>
           </AccordionBody>
         </AccordionItem>
         <AccordionItem>

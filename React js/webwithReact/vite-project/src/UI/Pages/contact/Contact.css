@@ -93,7 +93,7 @@ img {
   bottom: 0;
   width: 5px;
   height: 5px;
-  background: #d9612d;
+  background: #a52525b1;
   border-radius: 50%;
   content: "";
 }
@@ -261,7 +261,7 @@ img {
   margin: 0px 0 9px;
 }
 .single-contact-address-box h2 {
-  color: #d9612d;
+  color: #d9612d59;
   font-size: 24px;
   font-weight: 600;
   margin: 0 0 19px;
