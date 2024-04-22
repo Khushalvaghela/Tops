@@ -1368,8 +1368,7 @@
     "brand": "Fastreck",
     "gender": "male",
     "price": 3500,
-    "thumbnail": 
-    "https://www.fastrack.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw4592181f/images/Fastrack/Catalog/38094PP03_1.jpg?sw=360&sh=360",
+    "thumbnail": "https://www.fastrack.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw4592181f/images/Fastrack/Catalog/38094PP03_1.jpg?sw=360&sh=360",
     "discountPercentage": 12,
     "mainCategory": "Men's Watches",
     "category": ["Classic", "Leather"],

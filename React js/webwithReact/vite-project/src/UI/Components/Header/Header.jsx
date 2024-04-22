@@ -110,7 +110,7 @@ const {cart,refresh} = useSelector(
                 </NavLink>
                 <NavLink to="/Bag" className="cart-link">
                   <Bag size={20} />
-                  <span className="cart-count">{cart.length}</span>
+                  <span className="cart-count">{cart?.length}</span>
                 </NavLink>
               </NavItem>
             </div>

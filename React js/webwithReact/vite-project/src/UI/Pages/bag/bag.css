@@ -1,4 +1,4 @@
-/* shoppingCart.css */
+/* shoppingCart.css
 
 .shopping-cart-container {
   padding: 20px;
@@ -88,4 +88,69 @@
 
 .cart-item-remove button:hover {
   color: #a44;
+} */
+
+
+/* .whishmain{
+  padding: 250px 0px 0px 0px;
+}
+.whishmain .bestselarmain{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  
+}
+.bestselarmain img{
+  width: 250px;
+  height: 250px;
+} */
+
+
+
+.cart-container {
+  padding: 20px;
+}
+
+.cart-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.item-image {
+  margin-right: 20px;
+}
+
+.item-thumbnail {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.item-details p {
+  margin: 5px 0;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-controls button {
+  margin: 0 5px;
+}
+
+.remove-button {
+  background-color: red;
+  color: white;
+}
+
+.delete-all-button {
+  margin-top: 20px;
+  background-color: red;
+  color: white;
 }
