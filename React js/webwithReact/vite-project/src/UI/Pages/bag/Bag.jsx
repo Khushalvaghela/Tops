@@ -62,20 +62,26 @@
 //   );
 // }
 
-import React, { useEffect, useState } from "react";
-import { addCart,fetchCart } from "../../../redux/fetures/product/cart";
+import React from "react";
+import { useEffect } from "react";
+import {
+  addCart,
+  fetchCart,
+  setCart,
+} from "../../../redux/fetures/product/cart";
 import { useDispatch, useSelector } from "react-redux";
-import { Button, Input } from "reactstrap";
+import { Button } from "reactstrap";
 import axios from "axios";
-import "./bag.css";
 
-export default function Bags() {
+const Bag = ({ product }) => {
   const dispatch = useDispatch();
-  const { error, cart, pending, cartid } = useSelector(
+  const { error, cart, pending, cartId } = useSelector(
     (store) => store.cartSlice
   );
-  console.log("WishList  cartid:", cartid);
+  console.log("🚀 ~ Bag ~ cartid:", cartId);
   const data = useSelector((state) => state.authSlice);
+
+  const dataWatch = useSelector((state) => state.authSlice);
 
   useEffect(() => {
     dispatch(fetchCart());
@@ -91,7 +97,7 @@ export default function Bags() {
       method: "put",
       url: `http://localhost:9999/cart/update`,
       data: {
-        _id: cartid,
+        _id: cartId,
         productId,
         isRemove,
       },
@@ -104,79 +110,305 @@ export default function Bags() {
     });
   };
 
+  const incrimentHandler = (productId) => {
+    axios({
+      method: "post",
+      url: `http://localhost:9999/cart/create/${productId}`,
+
+      headers: {
+        authorization: `Bearer ${dataWatch?.token}`,
+
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        // console.log("cardlog", res?.data?.data);
+        dispatch(fetchCart());
+        toast.success("success");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   const deleteAllHandler = () => {
     axios({
       method: "delete",
-      url: `http://localhost:9999/cart/delete/${id}`,
-    });
+      url: `http://localhost:9999/cart/delete/${cartId}`,
+      headers: {
+        authorization: `Bearer ${data?.token}`,
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        console.log("delete", res);
+        dispatch(setCart());
+      })
+      .catch((err) => {
+        console.log("error", err);
+      });
   };
-  console.log("+++++", cart);
 
   return (
     <div>
-      <div className="" style={{ marginTop: "0px" }}>
-        <div>
-          {" "}
-          <Button onClick={() => deleteAllHandler()}>deleteAll</Button>{" "}
-        </div>
-        <div>
-          <h3 className="">MY CART LIST</h3>
-        </div>
-        <div>
-          <div>
-            {cart?.map((e, i) => {
-              return (
-                <div key={i} className="flex   items-center my-2">
-                  <div className="flex-1 flex justify-center">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <div>
+              <Button onClick={() => deleteAllHandler(cartId)}>
+                DeleteAll
+              </Button>
+            </div>
+            <tr>
+              <th scope="col" class="h5">
+                Shopping Bag
+              </th>
+              <th scope="col">Format</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
+              <th scope="col">Remove product</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cart?.map((e, i) => (
+              <tr key={i}>
+                <th scope="row">
+                  <div class="d-flex align-items-center">
                     <img
                       src={e?.productId?.thumbnail}
-                      alt=""
-                      className="w-36 rounded"
+                      class="img-fluid rounded-3"
+                      style={{ width: "120px" }}
+                      alt="Book"
+                    />
+                    <div class="flex-column ms-4">
+                      <p class="mb-2">{e?.productId?.title}</p>
+                      <p class="mb-0">{e?.productId?.description}</p>
+                    </div>
+                  </div>
+                </th>
+                <td class="align-middle">
+                  <p class="mb-0" style={{ fontWeight: 500 }}>
+                    Digital
+                  </p>
+                </td>
+                <td class="align-middle">
+                  <div class="d-flex flex-row">
+                    <Button
+                      onClick={() => dcrementeHnadler(e.productId._id, e.count)}
+                      className="bg-transparent text-black fw-bolder  "
+                    >
+                      -
+                    </Button>
+                    <div className="grid content-center border border-black mx-2 px-3 rounded">
+                      {e.count}
+                    </div>
+                    <p className="text-center"></p>
+                    <Button
+                      onClick={() => incrimentHandler(e?.productId?._id, e?.count)}
+                      className="bg-transparent text-black fw-bolder  "
+                    >
+                      +
+                    </Button>
+                  </div>
+                </td>
+                <td class="align-middle">
+                  <p class="mb-0" style={{ fontWeight: 500 }}>
+                    {e?.productId?.price}
+                  </p>
+                </td>
+                <td>
+                  {" "}
+                  <div>
+                    {" "}
+                    <Button
+                      onClick={() =>
+                        dcrementeHnadler(e.productId._id, e.count, e._id)
+                      }
+                      className="bg-dark ms-14"
+                    >
+                      Remove
+                    </Button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div
+        class="card shadow-2-strong mb-5 mb-lg-0"
+        style={{ borderRadius: "16px" }}
+      >
+        <div class="card-body p-4">
+          <div class="row">
+            <div class="col-md-6 col-lg-4 col-xl-3 mb-4 mb-md-0">
+              <form>
+                <div class="d-flex flex-row pb-3">
+                  <div class="d-flex align-items-center pe-2">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="radioNoLabel"
+                      id="radioNoLabel1v"
+                      value=""
+                      aria-label="..."
+                      checked
                     />
                   </div>
-                  <div className="flex-1 grig items-center">
-                    <p>
-                      {" "}
-                      <span>TITTLE :</span> {e?.productId?.title}
+                  <div class="rounded border w-100 p-3">
+                    <p class="d-flex align-items-center mb-0">
+                      <i class="fab fa-cc-mastercard fa-2x text-dark pe-2"></i>
+                      Credit Card
                     </p>
-                    <p>
-                      {" "}
-                      <span>PRICE :</span> {e?.productId?.price}
-                    </p>
-                  </div>
-                  <div className="flex-1">
-                    <div className="d-flex gap-3">
-                      <Button
-                        onClick={() =>
-                          dcrementeHnadler(e?.productId?._id, e?.count)
-                        }
-                        className="bg-transparent text-black fw-bolder  "
-                      >
-                        -
-                      </Button>
-                      <p>{e.count}</p>
-                      <Button className="bg-transparent text-black fw-bolder  ">
-                        +
-                      </Button>
-
-                      <Button
-                        onClick={() =>
-                          dcrementeHnadler(e.productId._id, e.count, e._id)
-                        }
-                        className="bg-dark ms-14"
-                      >
-                        Remove
-                      </Button>
-                    </div>
-
-                    {/* <p> <span>COUNT : </span> {e.count}  </p> */}
                   </div>
                 </div>
-              );
-            })}
+                <div class="d-flex flex-row pb-3">
+                  <div class="d-flex align-items-center pe-2">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="radioNoLabel"
+                      id="radioNoLabel2v"
+                      value=""
+                      aria-label="..."
+                    />
+                  </div>
+                  <div class="rounded border w-100 p-3">
+                    <p class="d-flex align-items-center mb-0">
+                      <i class="fab fa-cc-visa fa-2x fa-lg text-dark pe-2"></i>
+                      Debit Card
+                    </p>
+                  </div>
+                </div>
+                <div class="d-flex flex-row">
+                  <div class="d-flex align-items-center pe-2">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="radioNoLabel"
+                      id="radioNoLabel3v"
+                      value=""
+                      aria-label="..."
+                    />
+                  </div>
+                  <div class="rounded border w-100 p-3">
+                    <p class="d-flex align-items-center mb-0">
+                      <i class="fab fa-cc-paypal fa-2x fa-lg text-dark pe-2"></i>
+                      PayPal
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-6">
+              <div class="row">
+                <div class="col-12 col-xl-6">
+                  <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
+                    <input
+                      type="text"
+                      id="typeName"
+                      class="form-control form-control-lg"
+                      siez="17"
+                      placeholder="John Smith"
+                    />
+                    <label class="form-label" for="typeName">
+                      Name on card
+                    </label>
+                  </div>
+
+                  <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
+                    <input
+                      type="text"
+                      id="typeExp"
+                      class="form-control form-control-lg"
+                      placeholder="MM/YY"
+                      size="7"
+                      minlength="7"
+                      maxlength="7"
+                    />
+                    <label class="form-label" for="typeExp">
+                      Expiration
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12 col-xl-6">
+                  <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
+                    <input
+                      type="text"
+                      id="typeText"
+                      class="form-control form-control-lg"
+                      siez="17"
+                      placeholder="1111 2222 3333 4444"
+                      minlength="19"
+                      maxlength="19"
+                    />
+                    <label class="form-label" for="typeText">
+                      Card Number
+                    </label>
+                  </div>
+
+                  <div data-mdb-input-init class="form-outline mb-4 mb-xl-5">
+                    <input
+                      type="password"
+                      id="typeText"
+                      class="form-control form-control-lg"
+                      placeholder="&#9679;&#9679;&#9679;"
+                      size="1"
+                      minlength="3"
+                      maxlength="3"
+                    />
+                    <label class="form-label" for="typeText">
+                      Cvv
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-xl-3">
+              <div
+                class="d-flex justify-content-between"
+                style={{ fontWeight: 500 }}
+              >
+                <p class="mb-2">Subtotal</p>
+                <p class="mb-2">$23.49</p>
+              </div>
+
+              <div
+                class="d-flex justify-content-between"
+                style={{ fontWeight: 500 }}
+              >
+                <p class="mb-0">Shipping</p>
+                <p class="mb-0">$2.99</p>
+              </div>
+
+              <hr class="my-4" />
+
+              <div
+                class="d-flex justify-content-between mb-4"
+                style={{ fontWeight: 500 }}
+              >
+                <p class="mb-2">Total (tax included)</p>
+                <p class="mb-2">$26.48</p>
+              </div>
+
+              <button
+                type="button"
+                data-mdb-button-init
+                data-mdb-ripple-init
+                class="btn btn-primary btn-block btn-lg"
+              >
+                <div class="d-flex justify-content-between">
+                  <span>Checkout</span>
+                  <span>$26.48</span>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Bag;

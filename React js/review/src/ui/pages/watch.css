@@ -1,0 +1,57 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+   
+ 
+    margin-left: 20px;
+    border: none !important;
+    transition: 0.5s ease-in-out all ;
+
+}
+.card:hover {
+    transform:scaleY(-20px);
+}
+
+.card img {
+    max-width: 348px;
+    height: auto;
+}
+
+.card h6 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.card p {
+    color: #666;
+    margin-top: 5px;
+}
+
+.card h5 {
+    color: #333;
+    margin-top: 10px;
+}
+
+.button {
+    background-color: #ffa500;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #ff8c00;
+}

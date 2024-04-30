@@ -56,6 +56,8 @@ import ProRedux from "./20.reduxpr/ProRedux.jsx";
 import ProtectedRouter from "./11.protectedRouter/router/ProtectedRouter.jsx";
 import AppPro from "./11.protectedRouter/AppPro.jsx";
 import TaskInter from "./21.interviwtask/TaskInter.jsx";
+import FunTask from "./22.knovator/FunTask.jsx";
+import ProductPriview from "./23.productpriview/productPriview.jsx";
 
 function app() {
   return (
@@ -128,7 +130,10 @@ function app() {
         {/* <PrRedux/> */}
         {/* <ProRedux/> */}
         {/* <FilterApp/> */}
-        <TaskInter/>
+        {/* <TaskInter/> */}
+        {/* <FunTask/> */}
+        <ProductPriview/>
+        
       </div>
       <ToastContainer />
     </>

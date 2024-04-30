@@ -74,7 +74,11 @@ const cartSlice = createSlice({
   reducers: {
     refetch:(state)=>{
       state.refresh = !state.refresh
+    }, setCart: (state) => {
+      state.cart = [];
+      state.cartId = "";
     },
+    
     addCart:(state,{payload})=>{
       state.cart = payload.data;
         state.cartId = payload.cartId;
@@ -98,4 +102,4 @@ const cartSlice = createSlice({
 });
 
 export default cartSlice.reducer;
-export const {refetch,addCart} = cartSlice.actions;
+export const {refetch,addCart,setCart} = cartSlice.actions;

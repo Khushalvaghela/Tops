@@ -1,0 +1,71 @@
+/* Model.css */
+
+.modeldiv {
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .review-form {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+  }
+  
+  .review-form h2 {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .morebtn button{
+    text-align: center;
+    cursor: pointer !important;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bffe3 !important;
+    color: #fff !important;
+    margin-right: 10px;
+  }
+  
+  .btn {
+    border:none !important ;
+    cursor: pointer !important;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #8e2cb8a9 !important;
+    color: #fff !important;
+    margin-right: 10px;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .submit-btn {
+    background-color: #28a745;
+  }
+  
+  .submit-btn:hover {
+    background-color: #218838;
+  }
+  
+  .reset-btn {
+    background-color: #dc3545;
+  }
+  
+  .reset-btn:hover {
+    background-color: #c82333;
+  }
+  
