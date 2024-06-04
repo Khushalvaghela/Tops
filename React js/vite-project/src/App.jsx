@@ -42,7 +42,7 @@ import MainHomePage from "./React assignment/HomePage/MainHomePage";
 import ReducerPayload from "./4.Hook/useReducer/ReducerPayload";
 import ReducerAmount from "./4.Hook/useReducer/ReducerAmount";
 import TaskMultiValue from "./4.Hook/useReducer/TaskMultiValue";
-import Router from "./10.router/Router";
+// import Router from "./10.router/Router";
 import RegisterApp from "./13.Register/RegisterApp";
 import ToDoList from "./14.ToDoList/ToDoList";
 import CreReaDel from "./15.presionTetion/CreReaDel";
@@ -58,6 +58,7 @@ import AppPro from "./11.protectedRouter/AppPro.jsx";
 import TaskInter from "./21.interviwtask/TaskInter.jsx";
 import FunTask from "./22.knovator/FunTask.jsx";
 import ProductPriview from "./23.productpriview/productPriview.jsx";
+import RegisterTask from "./antim/register/RegisterTask.jsx";
 
 function app() {
   return (
@@ -115,7 +116,7 @@ function app() {
         {/* <ProtectedRouter/> */}
 
         {/* --------------------------------------ToDoList------------------------------------------------ */}
-        {/* <ToDoList/>  */}
+        <ToDoList/> 
         {/* --------------------------------------------presiontetion---------------------------------------- */}
         {/* <CreReaDel/> */}
         {/* <Todo/> */}
@@ -132,7 +133,8 @@ function app() {
         {/* <FilterApp/> */}
         {/* <TaskInter/> */}
         {/* <FunTask/> */}
-        <ProductPriview/>
+        {/* <ProductPriview/> */}
+        {/* <RegisterTask/> */}
         
       </div>
       <ToastContainer />

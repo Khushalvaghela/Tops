@@ -310,7 +310,7 @@ const Bag = ({ product }) => {
                       id="typeName"
                       class="form-control form-control-lg"
                       siez="17"
-                      placeholder="John Smith"
+                      placeholder="khushal vaghela"
                     />
                     <label class="form-label" for="typeName">
                       Name on card
